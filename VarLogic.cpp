@@ -88,7 +88,7 @@ using namespace std;    // adds a lot of bloat, but keeps us from typing "std::"
     string profName = "Dumbledore";
     string user = "BMO";
     string pass = "videogames";
-    string input = "";                                  // this will store the yser's text input
+    string input = "";                                  // this will store the user's text input
 
     cout << "What is your username?\n";
     cin >> input;                                       // for example:input = "BMO"
