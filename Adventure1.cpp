@@ -45,14 +45,28 @@ int main() {
         cout << "You were hit!\n";
         cout << "Your health is now: " << playerHealth << ".\n";
     }
-//        ask the player if they would like to keep adventuring. if they don't, break out of the loop.
-//keep looping while health is greater than zero and fewer than 4 turns have happened
 
+    if (playerHealth < 0) {
+        cout << "You died!\n";
     }
+//        ask the player if they would like to keep adventuring. if they don't, break out of the loop.
+    cout << "Would you like to keep adventuring?\n Type 'yes' to contuine: ";
+
+    cin >> input;
+
+    if (input != "yes") {
+        break;
+        cout << "Going home now!\n";
+    }
+
+//keep looping while health is greater than zero and fewer than 4 turns have happened
+    }
+
 //if health is greater than 0, congratulate player
     if (playerHealth > 0) {
         cout << "Congrats! You survived!\n";
     }
+
 //otherwise, tell the player they're dead.
     if (playerHealth < 0) {
         cout << "You died!\n";
