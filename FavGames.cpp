@@ -77,6 +77,91 @@ int main() {
 }
 
 /*
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    cout << "Hello!\n";
+
+    const int MAX_GAMES = 10;
+    string favGames[MAX_GAMES];
+    int addedGameCount = 0;
+    int numOffset;
+    string input;
+
+    while(true){
+        cout << "\nWhat would you like to do?\n";
+        cout << "add, edit, remove, show, quit\n>>";
+        getline(cin, input);
+
+        if(input == "add") {
+            if (addedGameCount >= MAX_GAMES) {
+                cout << "I'm so sorry, you're only allowed 5 favorite games.\n";
+            }
+            else {
+                cout << "What game would you like to add?\n";
+                getline(cin, input);
+                favGames[addeddGameCount++] = input;
+                cout << "You have added " <<favGames[addedGameCount - 1] << " to the list.\n";
+            }
+        }
+
+        else if(input == "edit") {
+            cout << "What game would you like to edit?\n";
+            getline(cin, input);
+            cout << "Looking for game...\n";
+            for(int i = 0; i < addedGameCount; i++) {
+                cout << "I have found your game! What would you like to change it to?\n";
+                string oldName = favGames[i];
+                getline(cin, input);
+                favGames[i] = input;
+                cout << "we changed " << oldName << " to " << favGames[i] << ".\n"
+                break;
+            }
+            if(i + 1 == addedGameCount) {
+                cout << "We couldn't find that game, please try again.\n";
+            }
+        }
+
+        else if(input == "remove") {
+            cout << "What game would you like to remove?\n";
+            getline(cin, input);
+            cout << "Looking for game...\n";
+            for(int i = 0; i < addedGameCount; i++) {
+                cout << "I have found your game! Removing now...\n";
+                favGames[i] = "";
+                break;
+            }
+            if(i + 1 == addedGameCount) {
+                cout << "We couldn't find that game, please try again.\n";
+            }
+        }
+
+        else if(input == "show") {
+            cout << "Here are your games:\n\n";
+            for(int i = 0; i < addedGameCount; i++) {
+                if(favGames[i] == "") {
+                numOffset--;
+                contuine;
+            }
+                cout << i + numOffset << ". " << favGames[i] << "\n";
+        }
+        numOffset = 1;
+
+        if(input == "quit") {
+        cout << "Thanks for playing! You added " << addedGameCount << " games to list.\n";
+        break;
+        }
+
+        else {
+            cout << "That is not an option, try again.\n";
+        }
+    }
+}
+*/
+
+/*
         pseudocode for FavGames assignment 
 
         Setup
