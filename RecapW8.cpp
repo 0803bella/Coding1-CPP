@@ -54,20 +54,20 @@ int main () {
         getline(cin, input);
         int playerGuess = 0;
 
-        try { playerGuess = stoi(input); }
-        catch (invalid_argument) { cout << "That's not a number, please try again.\n"; }
-
         if (input == "quit") {
             cout << "Oh, okay, bye... :(\n";
             break;
         }
 
-        if (stoi(input) == theNumber) {
+        try { playerGuess = stoi(input); }
+        catch (invalid_argument) { cout << "That's not a number, please try again.\n"; continue; }
+
+        if (playerGuess == theNumber) {
             cout << "Yay! You guessed my number!\n";
             break;
         }
 
-        if(stoi(input) > theNumber) {
+        if(playerGuess > theNumber) {
             cout << "It's lower than that!\n";
         }
 
