@@ -16,6 +16,8 @@ int GetDamage()
 #include <string>
 using namespace std;
 
+bool debug = true;
+
 class human {
 private:
     string n;
@@ -34,7 +36,13 @@ public:
     }
 
     void SetHealth(int byAmount) {
-        h = byAmount;
+        if (debug) {
+            cout << "at the top of SetHealth(byAmount), health = " << h << ", byAmount = " << byAmount << ".\n";
+        }
+        h += byAmount;
+
+        if (h < 0) h = 0;
+        if (h > 100) h = 100;
     }
 
     void SetDamage(int givenDamage) {
